@@ -1,0 +1,26 @@
+.btn-same {
+    min-width: 80px;
+    max-width: 80px;
+}
+div.centre {
+    width: 200px;
+    display: block;
+    background-color: #eee;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cortar{
+    width:200px;
+    height:20px;
+    padding:20px;
+    max-width: 20px;
+    text-overflow:ellipsis;
+    white-space:nowrap; 
+    overflow:hidden; 
+  }
+  .cortar:hover {
+    width: auto;
+    white-space: initial;
+    overflow:visible;
+    cursor: pointer;
+  }

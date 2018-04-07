@@ -1,0 +1,43 @@
+<nav class="sidebar" [ngClass]="{sidebarPushRight: isActive}">
+    <!--[routerLink]="['/lugar']" [routerLinkActive]="['router-link-active']" class="list-group-item"-->
+    <div class="nested-menu">
+        <a class="list-group-item" (click)="addExpandClass('pages')">
+            <span>
+                <i style="margin-top:50px"></i>&nbsp;Lugares</span>
+        </a>
+        <li class="nested" [class.expand]="showMenu === 'pages'">
+            <ul class="submenu">
+                <li>
+                    <a [routerLink]="['/lugar']" [routerLinkActive]="['router-link-active']">
+                        Ver lugares
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['/categoria']" [routerLinkActive]="['router-link-active']">
+                        Categorias
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <span>Agregar fotos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <span>Agregar Extra</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)">
+                        <span>Agregar Caregoria</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </div>
+    <div class="list-group">
+        <a href="" class="list-group-item">
+            Trabajadores
+        </a>
+    </div>
+</nav>

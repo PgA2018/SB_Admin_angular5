@@ -1,0 +1,55 @@
+<h2>Modificar lugar</h2>
+<div>
+  <form (ngSubmit)="updateLugar(lugar)">
+    <div class="form-group row">
+      <label for="nombre" class="col-2 col-form-label">Nombre:</label>
+      <div class="col-5">
+        <input class="form-control" type="text" [(ngModel)]="lugar.nombre" name="nombre" placeholder="Nombre del lugar" required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Caracteristicas" class="col-2 col-form-label">Caracteristicas:</label>
+      <div class="col-5">
+        <textarea name="text-Area" class="form-control" rows="3" cols="66" [(ngModel)]="lugar.descripcion" placeholder="Ingrese las caracteristicas detalladamente"></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Zona" class="col-2 col-form-label">Zona</label>
+      <div class="col-5">
+        <select name="Zona" [(ngModel)]="lugar.id_zona" class="col-12 form-control" ng-model="lugar.id_zona">
+          <option value="id_zona" value="{{zona.id_zona}}" ng-selected="lugar.id_zona" *ngFor='let zona of zonas'>{{zona.nombre}} </option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Ciudad" class="col-2 col-form-label">Ciudad</label>
+      <div class="col-5">
+
+        <select name="Ciudad" [(ngModel)]="lugar.id_ciudad" class="col-12 form-control" ng-model="lugar.id_ciudad">
+          <option value="id_ciudad" value="{{ciudad.id}}" ng-selected="lugar.id_ciudad" *ngFor='let ciudad of ciudades'>{{ciudad.nombre}} </option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="coordenadas" class="col-2 col-form-label">Coordenadas</label>
+      <div class="row" style="margin-left:4px">
+        <div class="col-6">
+          <input type="number" name="Latitud" [(ngModel)]="lugar.latitud" class="form-control" placeholder="latitud" required>
+        </div>
+        <div class="col-6">
+          <input type="number" name="longitud" [(ngModel)]="lugar.longitud" class="form-control" placeholder="longitud" required>
+        </div>
+
+      </div>
+    </div>
+    <div class="form-group row">
+      <div style="margin-left: 230px">
+        <input type="submit" class="btn" value="Guardar">
+
+      </div>
+      <div style="margin-left: 130px">
+        <button [routerLink]="['../..']" class="btn">Cancelar</button>
+      </div>
+    </div>
+  </form>
+</div>

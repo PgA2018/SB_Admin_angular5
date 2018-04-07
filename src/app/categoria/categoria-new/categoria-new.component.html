@@ -1,0 +1,31 @@
+<div>
+  <form #CategoriaNuevo="ngForm">
+    <fieldset>
+      <legend>Agregar Categoria al lugar</legend>
+      <div class="form-group row">
+        <label for="Categoria" class="col-2 col-form-label">Categoria</label>
+        <div class="col-5">
+          <select name="Categoria" [(ngModel)]="categoriaLugar.id_categoria" class="col-12 form-control" required>
+            <option value="id" value="{{categoria.id}}" *ngFor='let categoria of categorias'>{{categoria.nombre}} </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Lugar" class="col-2 col-form-label">Lugar</label>
+        <div class="col-5">
+          <select name="Zona" [(ngModel)]="categoriaLugar.id_lugar" class="col-12 form-control" required>
+            <option value="id" value="{{lugar.id}}" *ngFor='let lugar of lugares'>{{lugar.nombre}} </option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div style="margin-left: 230px">
+          <input type="submit" class="btn" value="Guardar" (click)="insertCategoria(categoriaLugar)" [disabled]="!CategoriaNuevo.form.valid">
+        </div>
+        <div style="margin-left: 130px">
+          <button [routerLink]="['..']" class="btn">Cancelar</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>

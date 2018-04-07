@@ -1,0 +1,43 @@
+<div>
+  <table id="tabla" style="border:2px " class="card-body table table-hover table table-condensed table-hover">
+    <thead>
+      <tr data-ng-href="desplegable" >
+        <th>Id</th>
+        <th>Nomber</th>
+        <th>Descripción</th>
+        <th>Zona</th>
+        <th>Latitud</th>
+        <th>Longitud</th>
+        <th>Ciudad</th>
+        <th>Telefonos</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let lugar of lugares; let i = index'>
+        <td>{{lugar.id}} </td>
+        <td>{{lugar.nombre}} </td>
+        <td class="cortar">{{lugar.descripcion}}</td>
+        <td>{{lugar.Zona.nombre}} </td>
+        <td>{{lugar.latitud}} </td>
+        <td>{{lugar.longitud}} </td>
+        <td>{{lugar.Ciudad.nombre}} </td>
+        <td>
+          <span *ngFor='let telefonos of lugar.Telefonos'>
+            {{telefonos.numero}}
+          </span>
+        </td>
+        <td>
+          <button class="btn btn-primary btn-same" [routerLink]="['update',lugar.id]">Editar</button>
+        </td>
+        <td>
+          <button class="btn btn-danger btn-same" (click)="delete(lugar,i)"> Eliminar</button>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="margin-left: 430px">
+    <button [routerLink]="['new']" class="btn btn-success btn-same">Agregar</button>
+  </div>
+</div>

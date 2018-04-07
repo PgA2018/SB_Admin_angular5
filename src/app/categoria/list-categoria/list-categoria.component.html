@@ -1,0 +1,22 @@
+<div>
+  <table class="card-body table table-hover table table-condensed table-hover">
+    <tr>
+      <th>Lugar</th>
+      <th>Categoria</th>
+      <th>Acciones</th>
+    </tr>
+    <tr *ngFor='let categoria of categorias; let i = index'>
+      <td> {{categoria.Lugar.nombre}} </td>
+      <td> {{categoria.Categorium.nombre}} </td>
+      <td>
+        <button class="btn btn-danger" (click)="delete(lugar,i)">Eliminar</button>
+      </td>
+      <td>
+        <button class="btn btn-primary">Modificar</button>
+      </td>
+    </tr>
+  </table>
+  <div style="margin-left: 430px">
+    <button [routerLink]="['new']" class="btn btn-success btn-same">Agregar</button>
+  </div>
+</div>
